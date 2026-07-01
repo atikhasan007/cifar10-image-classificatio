@@ -98,7 +98,7 @@ Update the app.py
 ## Challenges Faced During Development
 
 ### GitHub Repository Management
-- 1. GitHub Repository Management
+- 1.GitHub Repository Management
 - Faced difficulties pushing the project to GitHub after the data ingestion stage because of the large dataset size.
   
 - Multiple attempts to push the repository were unsuccessful due to Git limitations and repository size.
