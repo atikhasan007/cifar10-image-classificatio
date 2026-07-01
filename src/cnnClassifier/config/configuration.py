@@ -6,6 +6,7 @@ from src.cnnClassifier.entity.config_entity import (
     DataIngestionConfig,
     PrepareModelConfig,
     TrainingConfig,
+    EvaluationConfig,
 )
 
 
@@ -93,4 +94,26 @@ class ConfigurationManager:
             reduce_lr_patience=int(params.REDUCE_LR_PATIENCE),
             min_learning_rate=float(params.MIN_LEARNING_RATE),
             early_stopping_patience=int(params.EARLY_STOPPING_PATIENCE),
+        )
+
+    # ==========================
+    # Evaluation
+    # ==========================
+    def get_validation_config(self):
+
+        return EvaluationConfig(
+
+            path_of_model=Path(
+                "artifacts/training/model.h5"
+            ),
+
+            training_data=Path(
+                "artifacts/data_ingestion"
+            ),
+
+            all_params=self.params,
+
+            params_image_size=tuple(self.params.IMAGE_SIZE),
+
+            params_batch_size=int(self.params.BATCH_SIZE),
         )
