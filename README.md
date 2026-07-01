@@ -53,36 +53,26 @@ The main objective of this project is to build an end-to-end image classificatio
 
 ---
 
-## ⚙️ Project Workflow
 
-1. Data loading and preprocessing  
-2. CNN model building  
-3. Model training and validation  
-4. Saving trained model (`model.h5`)  
-5. Flask API development  
-6. Frontend UI for image upload  
-7. Real-time prediction  
 
----
+
 
 ## 🚀 How to Run the Project
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/cifar10-image-classification.git
+git clone https://github.com/atikhasan007/cifar10-image-classification.git
 cd cifar10-image-classification
+```
 
-
-
+### setup anaconda  environment and requirements setup 
 ```base
 conda create -n abc python=3.8
 conda activate abc
 pip install -r requiremetns.txt
 
 
-
-
-# WorkFlow
+## ⚙️ Project Workflow
 ```bash
 Update config.yaml
 Update params.yaml
@@ -95,27 +85,7 @@ Update the app.py
 
 ```
 
-
-
-
-
-
-
-
-
-
-# USER UI
-
-
-
-
-
-
-
-
-
-
-
+# USER UI 
 
 <img width="686" height="728" alt="Screenshot 2026-07-01 193025" src="https://github.com/user-attachments/assets/9483cb75-9fbf-4c67-9e9e-203ffd0b7ef5" />
 <img width="967" height="997" alt="Screenshot 2026-07-01 192927" src="https://github.com/user-attachments/assets/18535123-f5cc-4eae-bb20-5d2178cf6abd" />
