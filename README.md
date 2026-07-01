@@ -1,77 +1,76 @@
 # cifar10-image-classificatio
 
 
-import tensorflow as tf
-import numpy as np
-from pathlib import Path
+# 🐔 CIFAR-10 Image Classification Web App (Flask + CNN)
 
+## 📌 Project Overview
 
-class Training:
-    def __init__(self, config: TrainingConfig):
-        self.config = config
+This project is a deep learning-based image classification system built using a Convolutional Neural Network (CNN) and deployed with a Flask web application. The model is trained on the CIFAR-10 dataset, which contains 10 different classes: Airplane, Automobile, Bird, Cat, Deer, Dog, Frog, Horse, Ship, and Truck.
 
-    def load_data(self):
+The application allows users to upload an image through a web interface, processes the image using the trained model, and returns the predicted class along with a confidence score.
 
-        data_path = Path(self.config.training_data)
+---
 
-        self.X_train = np.load(data_path / "X_train.npy")
-        self.X_test = np.load(data_path / "X_test.npy")
-        self.y_train = np.load(data_path / "y_train.npy")
-        self.y_test = np.load(data_path / "y_test.npy")
+## 🎯 Project Objective
 
-    def get_base_model(self):
+The main objective of this project is to build an end-to-end image classification system that can accurately classify images into CIFAR-10 categories using deep learning techniques.
 
-        self.model = tf.keras.models.load_model(
-            self.config.updated_base_model_path
-        )
+### Key Objectives:
+- Build and train a CNN model for image classification  
+- Use CIFAR-10 dataset for training and evaluation  
+- Develop a Flask-based web application for real-time prediction  
+- Implement image preprocessing and normalization  
+- Deploy the trained model for user interaction  
+- Evaluate model performance using accuracy and loss metrics  
 
-    def get_callbacks(self):
+---
 
-        return [
-            tf.keras.callbacks.ReduceLROnPlateau(
-                monitor="val_loss",
-                factor=self.config.reduce_lr_factor,
-                patience=self.config.reduce_lr_patience,
-                min_lr=self.config.min_learning_rate,
-                verbose=1
-            ),
+## 🧠 Technologies Used
 
-            tf.keras.callbacks.EarlyStopping(
-                monitor="val_loss",
-                patience=self.config.early_stopping_patience,
-                restore_best_weights=True,
-                verbose=1
-            )
-        ]
+- Python  
+- TensorFlow / Keras  
+- NumPy  
+- Flask  
+- HTML, CSS, JavaScript  
+- PIL / OpenCV  
 
-    def train(self):
+---
 
-        self.load_data()
-        self.get_base_model()
+## 📊 Dataset
 
-        optimizer = tf.keras.optimizers.Adam(
-            learning_rate=self.config.learning_rate
-        )
+- CIFAR-10 Dataset  
+- 10 Classes:
+  - Airplane  
+  - Automobile  
+  - Bird  
+  - Cat  
+  - Deer  
+  - Dog  
+  - Frog  
+  - Horse  
+  - Ship  
+  - Truck  
 
-        self.model.compile(
-            optimizer=optimizer,
-            loss="sparse_categorical_crossentropy",  # ✅ FIX
-            metrics=["accuracy"]
-        )
+---
 
-        history = self.model.fit(
-            self.X_train,
-            self.y_train,
-            validation_data=(self.X_test, self.y_test),
-            epochs=self.config.epochs,
-            batch_size=self.config.batch_size,
-            callbacks=self.get_callbacks(),
-            verbose=2
-        )
+## ⚙️ Project Workflow
 
-        self.model.save(self.config.trained_model_path)
+1. Data loading and preprocessing  
+2. CNN model building  
+3. Model training and validation  
+4. Saving trained model (`model.h5`)  
+5. Flask API development  
+6. Frontend UI for image upload  
+7. Real-time prediction  
 
-        return history
+---
+
+## 🚀 How to Run the Project
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/cifar10-image-classification.git
+cd cifar10-image-classification
 
 
 
