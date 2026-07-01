@@ -98,7 +98,7 @@ Update the app.py
 ## Challenges Faced During Development
 
 ### GitHub Repository Management
-- 1.GitHub Repository Management
+
 - Faced difficulties pushing the project to GitHub after the data ingestion stage because of the large dataset size.
   
 - Multiple attempts to push the repository were unsuccessful due to Git limitations and repository size.
@@ -107,13 +107,13 @@ Update the app.py
 - As a result of reinitializing the Git repositor y, the previous commit history was lost, reducing the total number of Git commits.
 
 ### Hardware Limitations
-- 2.Hardware Limitations
+
 - The development machine did not have a dedicated GPU for deep learning model training.
 - Therefore, the model was trained entirely on the CPU, which significantly increased the training time.
 - Despite the hardware limitation, the complete end-to-end pipeline was successfully implemented and tested successfully.
 
 ### Debugging and Pipeline Integration
-- 3.Debugging and Pipeline Integration
+
 - Encountered several configuration and implementation issues while developing the modular end-to-end pipeline.
 - Debugged problems related to project structure, configuration files, training pipeline, dependency management, and module integration.
 - Successfully resolved the issues to ensure a stable, reproducible, and fully functional end-to-end workflow.
