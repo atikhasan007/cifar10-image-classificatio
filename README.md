@@ -1,8 +1,8 @@
 # cifar10-image-classificatio
 
 ```base
-conda create -n cnncls python=3.8
-conda activate cnncls
+conda create -n abc python=3.8
+conda activate abc
 pip install -r requirements.txt
 
 

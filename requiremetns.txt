@@ -19,8 +19,7 @@ gdown
 matplotlib
 tensorflow
 scipy
-<<<<<<< HEAD
-=======
+
 python-box
->>>>>>> e3ef4c4 (Initial commit)
+
 -e .
