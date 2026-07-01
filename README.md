@@ -65,7 +65,7 @@ git clone https://github.com/atikhasan007/cifar10-image-classification.git
 cd cifar10-image-classification
 ```
 
-### setup anaconda  environment and requirements setup 
+### setup anaconda  environment and Install dependencies
 ```base
 conda create -n abc python=3.8
 conda activate abc
