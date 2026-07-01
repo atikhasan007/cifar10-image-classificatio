@@ -1,0 +1,11 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+
+
+
+
+prepare_model:
+  root_dir: artifacts/prepare_model
+  model_path: artifacts/prepare_model/model.keras
