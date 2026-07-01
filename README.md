@@ -3,7 +3,7 @@
 ```base
 conda create -n abc python=3.8
 conda activate abc
-pip install -r requirements.txt
+pip install -r requiremetns.txt
 
 
 
