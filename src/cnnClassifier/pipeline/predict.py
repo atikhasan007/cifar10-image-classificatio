@@ -9,7 +9,7 @@ class PredictionPipeline:
         self.filename = filename
 
         self.model = load_model(
-            r"C:\Users\Hp\Desktop\cifar10-image-classificatio\model\model.h5"
+            r"C:\Users\Hp\Desktop\cifar10-image-classificatio\artifacts\training\model.h5"
         )
 
         self.class_names = [
@@ -34,9 +34,7 @@ class PredictionPipeline:
 
         img = image.img_to_array(img)
 
-        # IMPORTANT:
-        # Training যদি 0-255 data দিয়ে হয়ে থাকে,
-        # তাহলে এখানে /255 করবে না।
+       
         img = img.astype(np.float32)
 
         img = np.expand_dims(img, axis=0)
